@@ -1,0 +1,20 @@
+<td>
+  {{model.name}}
+</td>
+<td>
+  {{#if model.artist}}
+  <ul>
+    {{#each model.artist as |artist|}}
+      <li>
+        {{artist.name}}
+      </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</td>
+<td>
+  {{model.genre.name}}
+</td>
+<td>
+  {{model.likes}}
+</td>

@@ -1,0 +1,11 @@
+Song index page
+
+<button {{action 'createSong'}}>
+  Add a song
+</button>
+
+<table class="table-song">
+  {{#each model as |song|}}
+    {{song-item model=song}}
+  {{/each}}
+</table>

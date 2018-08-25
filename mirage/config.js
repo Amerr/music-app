@@ -11,7 +11,24 @@ export default function() {
   // this.urlPrefix = '';    // make this `http://localhost:8080`, for example, if your API is on a different server
   // this.namespace = '';    // make this `/api`, for example, if your API is namespaced
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
+  this.get('/songs', (schema, request) => {
+    return schema.songs.all();
+  });
 
+  this.post('/songs', (schema, request) => {
+    let song = JSON.parse(request.requestBody);
+    song.data.id = Math.ceil(Math.random() * 99);
+    return song;
+  });
+
+  this.get('/artists', (schema, request) => {
+    return schema.artists.all();
+  });
+
+  this.get('/genres', (schema, request) => {
+    return schema.genres.all();
+  });
+  
   /*
     Shorthand cheatsheet:
 
