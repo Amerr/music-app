@@ -1,0 +1,46 @@
+Song new template
+<div>
+  <table>
+    <tr>
+      <td>Name</td>
+      <td>{{input value=song.name}}</td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>{{input value=song.duration}}</td>
+    </tr>
+    <tr>
+      <td>Likes</td>
+      <td>{{input value=song.likes}}</td>
+    </tr>
+    <tr>
+      <td>link</td>
+      <td>{{input value=song.link}}</td>
+    </tr>
+    <tr>
+      <td>Genre</td>
+      <td>
+      {{#power-select options=genres selected=song.genre onchange=(action 'updateGenre') as |genre|}}
+        {{genre.name}}
+      {{/power-select}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Artist
+      </td>
+      <td>
+        {{#power-select-multiple options=artists selected=song.artist onchange=(action 'updateArtist') as |artist|}}
+          {{artist.name}}
+        {{/power-select-multiple}}
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button {{action 'save'}}>
+          Save
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

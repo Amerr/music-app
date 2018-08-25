@@ -7,6 +7,19 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('song', {
+    path: '/song'
+  }, function() {
+    this.route('new', {
+      path: 'new'
+    });
+    this.route('show', {
+      path: 'show/:song_id'
+    });
+    this.route('edit', {
+      path: 'edit/:song_id'
+    });
+  });
 });
 
 export default Router;
