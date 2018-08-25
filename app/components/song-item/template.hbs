@@ -1,7 +1,7 @@
-<td>
+<td data-test-song-name>
   {{model.name}}
 </td>
-<td>
+<td data-test-song-artist>
   {{#if model.artist}}
   <ul>
     {{#each model.artist as |artist|}}
@@ -12,9 +12,9 @@
   </ul>
   {{/if}}
 </td>
-<td>
+<td data-test-song-genre>
   {{model.genre.name}}
 </td>
-<td>
+<td data-test-song-likes>
   {{model.likes}}
 </td>
